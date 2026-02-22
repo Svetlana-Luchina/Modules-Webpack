@@ -3,11 +3,11 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: './src/index.js', // явно указываем точку входа
+  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[contenthash].js', // добавляем хеш для кэширования
-    clean: true, // очищаем dist перед каждой сборкой
+    filename: '[name].[contenthash].js',
+    clean: true,
   },
   module: {
     rules: [
@@ -29,7 +29,7 @@ module.exports = {
       {
         test: /\.css$/i,
         use: [
-          MiniCssExtractPlugin.loader, // вместо style-loader
+          MiniCssExtractPlugin.loader, 
           'css-loader',
         ],
       },
@@ -49,7 +49,7 @@ module.exports = {
       filename: './index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css', // имя выходного CSS-файла
+      filename: '[name].[contenthash].css', 
     }),
   ],
 };
